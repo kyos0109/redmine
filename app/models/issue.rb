@@ -1366,7 +1366,7 @@ class Issue < ActiveRecord::Base
   end
 
   def self.by_assigned_to(project)
-    count_and_group_by(:project => project, :association => :assigned_to)
+    count_and_group_by(:project => project, :with_subprojects => true, :association => :assigned_to)
   end
 
   def self.by_author(project)
